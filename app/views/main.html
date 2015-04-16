@@ -1,0 +1,27 @@
+
+<div class="innerContainer">
+  <h3>CONTACT LIST!</h3>
+
+  <!-- Todos input -->
+  <form role="form" ng-submit="addTodo()">
+    <div class="row">
+      <div class="input-group">
+        <input type="text" ng-model="todo" style="margin-left: 25px;" placeholder="Which contact needs to be added?" class="form-control">
+        <span class="input-group-btn" style="padding-left: 25px;">
+          <input type="submit" class="btn btn-primary" value="Add">
+        </span>
+      </div>
+    </div>
+  </form><br>
+
+   <!-- Todos list -->
+   <div ui-sortable ng-model="todos">
+     <p class="input-group" ng-repeat="todo in todos" style="padding:5px 10px; cursor: move;">
+        <input type="text" ui-sortable ng-model="todo" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+        </span>
+      </p>
+  </div>
+
+</div>
